@@ -1,0 +1,105 @@
+/* == About ==*/
+#about .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    row-gap: 2rem;
+    
+    @media (min-width:960px) {
+        justify-content: center;
+    }
+}
+#about .section-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+  
+
+    @media (min-width:960px) {
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .img-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @media (min-width:960px) {
+            flex-basis: 40%;
+        }
+        img {
+            width: 40vh;
+            height: 40vh; 
+            border-radius: 20px; 
+            object-fit: cover; 
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                    transform: scale(1.2);
+                    cursor: pointer;
+                }
+
+            @media (min-width:960px) {
+                width: 50vh;
+                height: 60vh;
+            }
+        }
+    }
+
+    .info-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        
+        @media (min-width:960px) {
+            flex-basis: 60%;
+        }
+    }
+    .card-section{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @media (min-width:960px) {
+            flex-direction: row;
+        }
+        .card {
+        flex: 1;
+        text-align: center;
+        padding: 1rem 0.3rem;
+        border-radius: 30px;
+        border: 1px solid var(--clr-black);
+        transition: 0.3s ease-out;
+        transition-property: background, color, border;
+        
+        &:hover {
+            background-color: var(--clr-green);
+            color: #fff;
+            cursor: pointer;
+            border: 1px solid var(--clr-green);
+        }
+        
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-block: 0.2rem;
+        }
+        
+        p {
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+            }
+     }
+
+    .text-section {
+         text-align: center;
+         
+         @media (min-width:960px) {
+            text-align: left;
+         }
+    }
+}

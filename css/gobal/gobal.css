@@ -1,0 +1,125 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    font-size: calc(16 / 16 * 1rem);
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    color: var(--clr-black);
+    background-color: var(--clr-white);
+    min-height: 100dvh;
+
+    &.dark-mode{
+        --clr-black: #fff;
+        --clr-white: #1a1a1a;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Wrapper */
+.wrapper {
+    display: grid;
+    grid-template-columns: 24px 1fr 24px;
+
+    >* {
+        grid-column: 2/3;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr min(100% - 80px, 1024px) 1fr;
+    }
+}
+
+/* Custom Properties */
+/* Color */
+:root {
+    --clr-green: #0bac50;
+    --clr-black: #1a1a1a;
+    --clr-white: #fff;
+}
+
+
+
+
+/* Button */
+.btn {
+    width: fit-content;
+    display: block;
+    color: var(--clr-white);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 300;
+    background-color: var(--clr-green);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    transition-property: background, color;
+
+    &:hover {
+        background-color: var(--clr-white);
+        color: var(--clr-green);
+        border: 1px solid var(--clr-green);
+    }
+}
+
+/* Section */
+section{
+    min-height: 100vh;
+    overflow: hidden;
+}
+section:not(:first-of-type){
+    position: relative;
+    padding-top: 12vh;
+
+    @media (min-width:960px) {
+        padding-top: 0;
+    }
+}
+.section-heading{
+    text-align: center;
+    p{
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1;
+        margin-block: 10px;
+        opacity: 0.7;
+    }
+    h2{
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+}
+
+/* == Arrow == */
+.arrow{
+    display: none;
+    
+
+    @media (min-width:960px) {
+        display: block;
+        position: absolute;
+        right: 70px;
+        bottom: 70px;
+        cursor: pointer;
+        color: var(--clr-black);
+        font-size: 1.2rem;
+    }
+}
